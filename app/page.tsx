@@ -1,101 +1,137 @@
+import { X, MessageCircle, Sun, Facebook, Instagram } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
+import logo from "./image/Logo.png";
+import h1 from "./image/h1.jpg";
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Header */}
+      <header
+        className="flex items-center justify-between p-6 relative z-10"
+        style={{
+          borderBottom: "1px solid black",
+        }}
+      >
+        <div className="flex items-center">
+          <Image
+            src={logo}
+            alt="hello"
+            style={{
+              width: 35,
+              height: 35,
+              marginRight: 2,
+            }}
+          />
+          <span className="text-lg font-mono text-gray-800 font-bold">
+            V.Builder
+          </span>
+        </div>
+        <div className="flex items-center gap-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-gray-600 hover:text-[#C29860]"
+          >
+            <Facebook className="h-5 w-5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-gray-600 hover:text-[#C29860]"
+          >
+            <Instagram className="h-5 w-5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-gray-600 hover:text-gray-800"
+          >
+            <X className="h-5 w-5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-gray-600 hover:text-gray-800"
+          >
+            <MessageCircle className="h-5 w-5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-gray-600 hover:text-gray-800"
+          >
+            <Sun className="h-5 w-5" />
+          </Button>
+        </div>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Main Content */}
+      <main className="px-6 py-12 relative z-10">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          <div className="max-w-2xl flex-1">
+            {/* Main Title */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8 font-mono">
+              <span
+                className="text-[#C29860]"
+                style={{
+                  fontSize: 80,
+                }}
+              >
+                V.Builder
+              </span>
+            </h1>
+
+            {/* Description */}
+            <div className="border-l-4 border-[#C29860] pl-6 mb-12">
+              <p
+                className="text-lg text-gray-600 leading-relaxed"
+                style={{
+                  fontSize: 30,
+                }}
+              >
+                The space for builders – sparking creativity, fostering
+                connection, driving projects further.
+              </p>
+            </div>
+
+            {/* Feature Pills */}
+          </div>
+
+          <div className="hidden lg:block flex-1 ml-12">
+            <div className="relative">
+              <Image src={h1} alt="hub" className="rounded-2xl shadow-2xl" />
+              {/* Decorative frame */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-[#C29860]/20 to-[#293352]/20 rounded-3xl -z-10"></div>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 right-0 w-2/3 h-full overflow-hidden pointer-events-none">
+        {/* Main Wave */}
+        <div className="absolute top-1/4 -right-32 w-[800px] h-[600px] opacity-80">
+          <div className="w-full h-full bg-gradient-to-br from-[#C29860]/20 via-[#C29860]/10 to-transparent rounded-full blur-3xl transform rotate-12"></div>
+        </div>
+
+        {/* Secondary Wave */}
+        <div className="absolute top-1/3 -right-20 w-[600px] h-[400px] opacity-60">
+          <div className="w-full h-full bg-gradient-to-bl from-[#293352]/15 via-[#293352]/8 to-transparent rounded-full blur-2xl transform -rotate-6"></div>
+        </div>
+
+        {/* Accent Elements */}
+        <div className="absolute top-1/2 right-20 w-32 h-32 bg-[#C29860]/10 rounded-full blur-xl"></div>
+        <div className="absolute top-3/4 right-40 w-20 h-20 bg-[#293352]/15 rounded-full blur-lg"></div>
+
+        {/* Floating Particles */}
+        <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-[#C29860] rounded-full opacity-40 animate-pulse"></div>
+        <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-[#293352] rounded-full opacity-60 animate-pulse delay-1000"></div>
+        <div className="absolute top-2/3 right-1/5 w-3 h-3 bg-[#C29860]/50 rounded-full opacity-30 animate-pulse delay-500"></div>
+      </div>
+
+      {/* Bottom Accent Line */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#C29860] via-[#293352] to-transparent"></div>
     </div>
   );
 }
